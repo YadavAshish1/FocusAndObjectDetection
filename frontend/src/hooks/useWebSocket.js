@@ -14,6 +14,8 @@ const useWebSocket = (roomId) => {
     if (!roomId) return
    
     const serverUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+    console.log(serverUrl,'serverUrl');
+    
     socketRef.current = io(serverUrl)
 
     socketRef.current.on('connect', async () => {

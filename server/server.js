@@ -16,9 +16,11 @@ const videosDir = path.join(__dirname, 'videos')
 if (!fs.existsSync(videosDir)) {
   fs.mkdirSync(videosDir)
 }
+console.log(process.env.FRONTEND_URL,'url');
+
 const io = socketIo(server, {
     cors: {
-        origin: process.env.FRONTEND_URL || "http://localhost:5173",
+        origin: process.env.FRONTEND_URL || "https://exam-proctor-hta4.onrender.com" || "http://localhost:5173",
         methods: ["GET", "POST"]
     }
 })
@@ -77,11 +79,11 @@ socket.on('video_frame', ({ roomId, frame }) => {
 // Save video chunks to a file
 socket.on('stream_chunk', ({ roomId, chunk }) => {
   const filePath = path.join(videosDir, `vid-${roomId}.webm`);
-  fs.appendFile(filePath, Buffer.from(chunk), (err) => {
-    if (err) {
-      console.error('Error saving chunk:', err);
-    }
-  });
+//   fs.appendFile(filePath, Buffer.from(chunk), (err) => {
+//     if (err) {
+//       console.error('Error saving chunk:', err);
+//     }
+//   });
 });
 
 

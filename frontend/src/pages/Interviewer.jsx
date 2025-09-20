@@ -350,7 +350,7 @@ const InterviewerDashboard = () => {
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Violations</p>
                 <p className="text-2xl font-semibold text-gray-900">
-                  {events.filter(e => e.severity === 'violation').length}
+                  {events.filter(e => e.type === 'Violation').length}
                 </p>
               </div>
             </div>
@@ -366,7 +366,7 @@ const InterviewerDashboard = () => {
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Warnings</p>
                 <p className="text-2xl font-semibold text-gray-900">
-                  {events.filter(e => e.severity === 'warning').length}
+                  {events.filter(e => e.type === 'Warning').length}
                 </p>
               </div>
             </div>
