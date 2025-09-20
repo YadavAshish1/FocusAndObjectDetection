@@ -1,0 +1,24 @@
+# render.yaml for Render deployment
+services:
+  - type: web
+    name: exam-proctoring-app
+    env: node
+    plan: starter   # Change if you want a paid plan
+    branch: main
+    buildCommand: |
+      # Install and build frontend
+      cd frontend
+      npm ci
+      npm run build
+      cd ../server
+      npm ci
+    startCommand: node server.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000   # Render assigns a dynamic $PORT; can override in code if needed
+    disk:
+      mountPath: /app/videos
+      sizeGB: 1
