@@ -103,7 +103,7 @@ FocusAndObjectDetection/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/YadavAshish1/FocusAndObjectDetection.git
    cd FocusAndObjectDetection
    ```
 
