@@ -99,7 +99,7 @@ FocusAndObjectDetection/
 - **Modern web browser** with camera access
 - **Webcam** and microphone
 
-### Option 1: Docker Deployment (Recommended)
+### Option 1: Docker Deployment
 
 1. **Clone the repository**
    ```bash
@@ -108,10 +108,11 @@ FocusAndObjectDetection/
    ```
 
 2. **Deploy with Docker**
+   ```bash
    docker-compose up -d --build
    ```
 
-3. **Access the application**
+4. **Access the application**
    - **Application**: http://localhost:3001
 
 ### Option 2: Local Development
